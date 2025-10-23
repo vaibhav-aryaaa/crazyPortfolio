@@ -182,9 +182,9 @@ export default function Home() {
         <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
           Hello, I'm Vaibhav 👋
         </h2>
-        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-          This is my AI Portfolio
-        </h1>
+        <h3 className="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-7xl">
+          AIML / Frontend Developer
+        </h3>
       </motion.div>
 
       {/* centre memoji */}

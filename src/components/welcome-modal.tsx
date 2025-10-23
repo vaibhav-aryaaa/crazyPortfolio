@@ -65,10 +65,10 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
             <DialogHeader className="relative flex flex-row items-start justify-between px-6 pt-6 pb-4">
               <div>
                 <DialogTitle className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
-                  Welcome to AI Portfolio
+                  Crazy Portfolio
                 </DialogTitle>
                 <DialogDescription className="mt-1 text-base text-zinc-600 dark:text-zinc-400">
-                  Your personalized and interactive portfolio experience.
+                  Your personalized portfolio experience.
                 </DialogDescription>
               </div>
               <Button
@@ -87,11 +87,12 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
               <section className="space-y-6 rounded-2xl bg-zinc-100 dark:bg-zinc-800 p-6">
                 <div className="space-y-2">
                   <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
-                    What's ????
+                    What's so special????
                   </h3>
                   <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                    I'm so excited to present my <strong>brand new AI Portfolio</strong>.<br />
-                    Whether you're a recruiter, a friend, family member, or just curious — feel free to ask anything you want!
+                    So basically this <strong>crazy Portfolio</strong>
+                    is a simple accessible one.<br />
+                    
                   </p>
                 </div>
 
