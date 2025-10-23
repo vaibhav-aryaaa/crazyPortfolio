@@ -1,17 +1,19 @@
 // src/app/api/chat/route.ts
+import OpenAI from 'openai';
+import { streamText } from 'ai';
+import { SYSTEM_PROMPT } from './prompt';
 
-import { createOllama } from 'ollama-ai-provider';
-import { streamText } from "ai";
-import { SYSTEM_PROMPT } from './prompt'; // <-- STEP 1: Import your new prompt
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
 
-const ollama = createOllama();
 export const runtime = 'edge';
 export const maxDuration = 30;
 
 function errorHandler(error: unknown) {
-  if (error == null) { return 'Unknown error'; }
-  if (typeof error === 'string') { return error; }
-  if (error instanceof Error) { return error.message; }
+  if (error == null) return 'Unknown error';
+  if (typeof error === 'string') return error;
+  if (error instanceof Error) return error.message;
   return JSON.stringify(error);
 }
 
@@ -19,19 +21,25 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
-    // --- STEP 2: Add the system prompt to the beginning of the conversation ---
+    // Add system prompt
     messages.unshift(SYSTEM_PROMPT);
-    
-    const result = streamText({
-      model: ollama("phi3"),
-      messages,
+
+    // Convert messages to OpenAI format
+    const formattedMessages = messages.map((msg: any) => ({
+      role: msg.role,
+      content: msg.content
+    }));
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: formattedMessages,
+      temperature: 0.7
     });
 
-    return result.toDataStreamResponse({
-      getErrorMessage: errorHandler,
-    });
+    const assistantMessage = completion.choices[0].message?.content || '';
+    return new Response(assistantMessage, { status: 200 });
   } catch (err) {
-    console.error("Global error:", err);
+    console.error('Global error:', err);
     const errorMessage = errorHandler(err);
     return new Response(errorMessage, { status: 500 });
   }

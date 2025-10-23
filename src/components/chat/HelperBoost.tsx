@@ -44,12 +44,12 @@ export default function HelperBoost({ setView }: HelperBoostProps) {
           {isVisible ? (
             <>
               <ChevronDown size={14} />
-              Hide quick questions
+              Hide quick options
             </>
           ) : (
             <>
               <ChevronUp size={14} />
-              Show quick questions
+              Show quick options
             </>
           )}
         </button>
@@ -76,7 +76,7 @@ export default function HelperBoost({ setView }: HelperBoostProps) {
                 </div>
               </motion.button>
             ))}
-             <motion.button
+             {/* <motion.button
                 onClick={() => alert("More button clicked!")} // Or open a drawer
                 className="h-auto cursor-pointer rounded-2xl border border-white/20 bg-black/5 p-3 backdrop-blur-lg transition-colors hover:bg-black/10 active:scale-95 dark:bg-white/5 dark:hover:bg-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
                 whileHover={{ scale: 1.05 }}
@@ -85,7 +85,7 @@ export default function HelperBoost({ setView }: HelperBoostProps) {
                 <div className="flex items-center gap-3 text-neutral-700 dark:text-neutral-200">
                     <CircleEllipsis className="h-[20px] w-[18px]" strokeWidth={2} />
                 </div>
-             </motion.button>
+             </motion.button> */}
           </div>
         </div>
       )}

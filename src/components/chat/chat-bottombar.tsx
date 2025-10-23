@@ -1,7 +1,7 @@
 // src/components/chat/chat-bottombar.tsx
 'use client';
 
-import { ChatRequestOptions } from 'ai';
+// import { ChatRequestOptions } from 'ai';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import React, { useEffect } from 'react';
@@ -54,7 +54,7 @@ export default function ChatBottombar({
     >
       <form onSubmit={handleSubmit} className="relative w-full md:px-4">
         {/* --- THIS IS THE UPDATED DIV --- */}
-        <div className="mx-auto flex items-center rounded-full border border-black/10 bg-white/5 py-2 pr-2 pl-6 backdrop-blur-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-colors hover:bg-black/10 dark:border-white/20 dark:bg-black/10 dark:hover:bg-black/20">
+        {/* <div className="mx-auto flex items-center rounded-full border border-black/10 bg-white/5 py-2 pr-2 pl-6 backdrop-blur-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] transition-colors hover:bg-black/10 dark:border-white/20 dark:bg-black/10 dark:hover:bg-black/20">
           <input
             ref={inputRef}
             type="text"
@@ -82,7 +82,7 @@ export default function ChatBottombar({
           >
             <ArrowRight className="h-6 w-6" />
           </button>
-        </div>
+        </div> */}
       </form>
     </motion.div>
   );

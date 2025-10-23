@@ -216,7 +216,7 @@ export default function Home() {
           }}
           className="relative w-full max-w-lg"
         >
-          <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
+          {/* <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
             <input
               ref={inputRef}
               type="text"
@@ -233,7 +233,7 @@ export default function Home() {
             >
               <ArrowRight className="h-5 w-5" />
             </button>
-          </div>
+          </div> */}
         </form>
 
         {/* quick-question grid */}
